@@ -70,7 +70,7 @@ public class CustomerController {
         Customer toSave=customerService.findOneById(id);
         coupon.setCustomer(toSave);
         couponService.saveCoupon(coupon);
-        return "redirect:/customers/"+id;
+        return "redirect:/customers/"+id+"/coupons";
     }
 
 
@@ -81,11 +81,13 @@ public class CustomerController {
         return "coupons/new";
     }
 
-    @PostMapping("customers/{id}/deletecoupon")
-    public String deleteCoupon(@ModelAttribute Coupon coupon, Model model,@PathVariable Long id, RedirectAttributes redirectAttributes){
+    @PostMapping("customers/{id}/deletecoupon/{couponid}")
+    public String deleteCoupon(@ModelAttribute Coupon coupon, Model model,@PathVariable("id") Long id, @PathVariable("couponid") Long couponid, RedirectAttributes redirectAttributes){
+        coupon.setId(couponid);
+        System.out.println("controller received coupon to delete ----"+coupon);
         couponService.delete(coupon);
 
-        return "redirect:/customers/"+id;
+        return "redirect:/customers/"+id+"/coupons";
     }
 }
 

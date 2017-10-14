@@ -29,4 +29,12 @@ public class Coupon extends Discount{
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+    @Override
+    public String toString() {
+        return "Coupon{" + "id --- " + this.getId()+
+                "   productType=" + productType +
+                ", customer=" + customer +
+                '}';
+    }
 }

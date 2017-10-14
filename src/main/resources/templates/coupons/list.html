@@ -43,32 +43,39 @@
 				th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=${message.message})">&nbsp;</div>
 		</th:block>
 
+		<div class="row">
+
+			<a class="btn btn-primary" th:href="@{/customers/{id}/newcoupon(id=${id})}" role="button">Add Coupon</a>
+		</div>
 		<div class="row table-responsive">
 			<table class="table">
 				<thead>
 					<tr>
-						<th>Edit</th>
-						<th>See Coupons</th>
-						<th class='tablefilter1'>Customer ID</th>
-						<th class='tablefilter2'>Something</th>
-						<th class='tablefilter3'>Customer Name</th>
+						<th>DELETE</th>
+						<th class='tablefilter1'>Coupon ID</th>
+						<th class='tablefilter2'>Coupon Name</th>
+						<th class='tablefilter3'>Coupon percent</th>
+						<th class='tablefilter4'>Product Type</th>
 
 
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:if="${customers !=null}"
-						th:each="customer : ${customers}">
-						<td><a class="btn btn-success btn-xs" data-title="Edit"
-							data-toggle="modal" data-target="#edit"
-							th:href="@{/customers/{id}(id=${customer.id})}"><span
-								class="glyphicon glyphicon-pencil"></span></a></td>
-						<td><a class="btn btn-success btn-xs" data-title="Coupons"
-							   data-toggle="modal" data-target="#coupons"
-							   th:href="@{/customers/{id}/coupons(id=${customer.id})}">COUPONS</a></td>
-						<td th:text="${customer.id}"></td>
-						<td th:text="${customer.id}"></td>
-						<td th:text="${customer.name}"></td>
+					<tr th:if="${coupons !=null}"
+						th:each="coupon : ${coupons}">
+						<form action="#" th:action="@{/customers/{id}/deletecoupon/{couponid}(id=${id},couponid=${coupon.id})}"
+							  enctype="multipart/form-data" method="post">
+
+						<td>
+							<button class="btn btn-danger btn-xs" type="submit" name="action">
+								DELETE
+							</button>
+						</td>
+						<td th:text="${coupon.id}" th:field="*{id}"></td>
+						<td th:text="${coupon.name}" th:field="*{name}"></td>
+						<td th:text="${coupon.percentOffValue}" th:field="*{percentOffValue}"></td>
+						<td th:text="${coupon.productType}" th:field="*{productType}"></td>
+						</form>
 					</tr>
 				</tbody>
 			</table>

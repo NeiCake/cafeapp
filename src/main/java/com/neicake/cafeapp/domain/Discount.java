@@ -11,9 +11,20 @@ public class Discount {
     private Long id;
 
     @Column
-    private boolean active;
+    private boolean active=true;
     @Column
     private int percentOffValue;
+
+    @Column
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return id;

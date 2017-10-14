@@ -1,5 +1,7 @@
 package com.neicake.cafeapp.domain;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 import java.util.List;
 @Entity
@@ -12,6 +14,7 @@ public class Customer {
 
 
     @OneToMany(mappedBy = "customer")
+    @Where(clause="active=true")
     private List<Coupon> coupons;
 
 

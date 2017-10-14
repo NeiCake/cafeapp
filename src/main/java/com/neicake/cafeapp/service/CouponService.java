@@ -13,7 +13,7 @@ import java.util.List;
 public class CouponService implements ICouponService {
 
     @Autowired
-    CouponRepository couponDao;
+    private CouponRepository couponDao;
 
     @Override
     public Coupon findOneById(Long id) {
@@ -28,6 +28,9 @@ public class CouponService implements ICouponService {
 
     @Override
     public void delete(Coupon coupon) {
-        couponDao.delete(coupon);
+        System.out.println("deleting "+coupon);
+        coupon.setActive(false);
+        couponDao.save(coupon);
+
     }
 }
