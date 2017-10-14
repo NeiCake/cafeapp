@@ -7,6 +7,7 @@ public class ProductDiscount extends Discount{
 
 
     @OneToOne
+    @JoinColumn
     private Product product;
 
 }

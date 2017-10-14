@@ -25,17 +25,7 @@ public class Product {
     @Column
     private BigDecimal price;
 
-    @JoinColumn
-    @OneToOne
-    ProductDiscount discount;
 
-    public ProductDiscount getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(ProductDiscount discount) {
-        this.discount = discount;
-    }
 
     @Column
     @Temporal(TemporalType.DATE)

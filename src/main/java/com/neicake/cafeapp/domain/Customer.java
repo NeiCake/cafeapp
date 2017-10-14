@@ -11,11 +11,9 @@ public class Customer {
     private String name;
 
 
-    @OneToMany
-    private List<CustomerDiscount> coupons;
+    @OneToMany(mappedBy = "customer")
+    private List<Coupon> coupons;
 
-    @OneToMany
-    private List<Purchase> purchases;
 
     public Long getId() {
         return id;
@@ -33,19 +31,13 @@ public class Customer {
         this.name = name;
     }
 
-    public List<CustomerDiscount> getCoupons() {
+    public List<Coupon> getCoupons() {
         return coupons;
     }
 
-    public void setCoupons(List<CustomerDiscount> coupons) {
+    public void setCoupons(List<Coupon> coupons) {
         this.coupons = coupons;
     }
 
-    public List<Purchase> getPurchases() {
-        return purchases;
-    }
 
-    public void setPurchases(List<Purchase> purchases) {
-        this.purchases = purchases;
-    }
 }
