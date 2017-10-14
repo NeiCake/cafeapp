@@ -48,31 +48,25 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th class='tablefilter1'>Product ID</th>
-						<th class='tablefilter2'>Product Type</th>
-						<th class='tablefilter3'>Product Name</th>
-						<th class='tablefilter4'>Stock</th>
-						<th class='tablefilter5'>Price</th>
-						<th class='tablefilter6'>Discounted</th>
-						<th class='tablefilter7'>Expiration date</th>
+						<th class='tablefilter1'>Customer ID</th>
+						<th class='tablefilter2'>Something</th>
+						<th class='tablefilter3'>Customer Name</th>
+						<th class='tablefilter4'>Discounts</th>
 
 
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:if="${products !=null}"
-						th:each="product : ${products}">
+					<tr th:if="${customers !=null}"
+						th:each="customer : ${customers}">
 						<td><a class="btn btn-success btn-xs" data-title="Edit"
 							data-toggle="modal" data-target="#edit"
-							th:href="@{/products/{id}(id=${product.id})}"><span
+							th:href="@{/customers/{id}(id=${customer.id})}"><span
 								class="glyphicon glyphicon-pencil"></span></a></td>
-						<td th:text="${product.id}"></td>
-						<td th:text="${product.type}"></td>
-						<td th:text="${product.name}"></td>
-						<td th:text="${product.stock}"></td>
-						<td th:text="${product.price}"></td>
-						<td th:text="${product.price}"></td>
-						<td th:text="${product.expirationDate}"></td>
+						<td th:text="${customer.id}"></td>
+						<td th:text="${customer.id}"></td>
+						<td th:text="${customer.name}"></td>
+						<td th:text="${customer.name}"></td>
 					</tr>
 				</tbody>
 			</table>

@@ -9,4 +9,5 @@ import java.util.List;
 public interface IProductSErvice {
     Product save(Product product);
     List<Product> getAllProducts();
+    Product findOneById(Long id);
 }

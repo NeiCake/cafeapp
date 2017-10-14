@@ -3,7 +3,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="layouts/default_layout">
 <head>
-<title>New Candidate</title>
+<title>New Product</title>
 <link rel="stylesheet" type="text/css"
 	th:href="@{/css/bootstrap.min.css}" />
 <script
@@ -44,7 +44,7 @@ select.form-control {
 				th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=${message.message})">&nbsp;</div>
 		</th:block>
 
-		<form action="#" th:action="@{/newproduct}" th:object="${product}"
+		<form action="#" th:action="@{/products}" th:object="${product}"
 			enctype="multipart/form-data" method="post">
 
 			<div class="row">
@@ -70,9 +70,23 @@ select.form-control {
 					</div>
 					<div class="row" style="margin-top: 10px;">
 						<div class="col-md-8">
+							<label>Price: </label> <input type="text" required="required"
+														  th:field="*{price}" class="form-control input-md" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Price: </label><select  th:field="*{type}">
+						<option th:each="type : ${T(com.neicake.cafeapp.domain.ProductType).values()}"
+								th:value="${type}"
+								th:text="${type}">
+						</option>
+						</select></div></div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
 							<label>Expiration date: </label>
 
-							<input type="text" th:value="${date}"
+							<input type="text" th:field="*{expirationDate}"
 								class="form-control input-md datepicker" />
 						</div>
 					</div>

@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class ProductDiscount extends Discount{
 
 
-    @Column
-    private ProductType productType;
+    @OneToOne
+    private Product product;
 
 }

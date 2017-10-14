@@ -13,6 +13,7 @@ public class ProductService implements IProductSErvice{
     ProductRepository productDao;
 
     public Product save(Product product){
+
         return productDao.save(product);
     }
 
@@ -20,5 +21,11 @@ public class ProductService implements IProductSErvice{
     public List<Product> getAllProducts() {
         return productDao.findAll();
     }
+
+    @Override
+    public Product findOneById(Long id) {
+        return productDao.findOne(id);
+    }
+
 
 }

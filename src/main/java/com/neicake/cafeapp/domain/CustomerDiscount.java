@@ -10,4 +10,7 @@ public class CustomerDiscount extends Discount{
     @ManyToOne
     private Customer customer;
 
+    @Column
+    private ProductType productType;
+
 }

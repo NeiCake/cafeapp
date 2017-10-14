@@ -1,14 +1,16 @@
 package com.neicake.cafeapp.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
@@ -23,9 +25,43 @@ public class Product {
     @Column
     private BigDecimal price;
 
-    @Column
-    private boolean discounted;
+    @JoinColumn
+    @OneToOne
+    ProductDiscount discount;
 
+    public ProductDiscount getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(ProductDiscount discount) {
+        this.discount = discount;
+    }
+
+    @Column
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date expirationDate;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type=" + type +
+                ", stock=" + stock +
+                ", price=" + price +
+                ", discounted=" +
+                ", expirationDate=" + expirationDate +
+                '}';
+    }
+
+    public Date getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(Date expirationDate) {
+        this.expirationDate = expirationDate;
+    }
 
     public String getName() {
         return name;
@@ -35,13 +71,6 @@ public class Product {
         this.name = name;
     }
 
-    public boolean isDiscounted() {
-        return discounted;
-    }
-
-    public void setDiscounted(boolean discounted) {
-        this.discounted = discounted;
-    }
 
     public Long getId() {
         return id;
@@ -73,16 +102,6 @@ public class Product {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", stock=" + stock +
-                ", price=" + price +
-                '}';
     }
 
     @Override

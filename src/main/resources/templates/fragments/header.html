@@ -41,9 +41,16 @@
 						<li
 							th:classappend="${#httpServletRequest.getRequestURI().contains((#httpServletRequest.getContextPath()+'/products')) ? 'active':''}"><a
 							th:href="@{/products}">Products</a></li>
+
 						<li
-							th:classappend="${#httpServletRequest.getRequestURI() == (#httpServletRequest.getContextPath()+'/newproduct') ? 'active':''}"><a
-							th:href="@{/newproduct}">New Product</a></li>
+								th:classappend="${#httpServletRequest.getRequestURI() == (#httpServletRequest.getContextPath()+'/newproduct') ? 'active':''}"><a
+								th:href="@{/newproduct}">New Product</a></li>
+						<li
+								th:classappend="${#httpServletRequest.getRequestURI() == (#httpServletRequest.getContextPath()+'/customers') ? 'active':''}"><a
+								th:href="@{/customers}">Customers</a></li>
+						<li
+								th:classappend="${#httpServletRequest.getRequestURI() == (#httpServletRequest.getContextPath()+'/newcustomer') ? 'active':''}"><a
+								th:href="@{/newcustomer}">New Customer</a></li>
 					</ul>
 
 				</div>
