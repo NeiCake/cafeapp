@@ -1,5 +1,6 @@
 package com.neicake.cafeapp.service;
 
+import com.neicake.cafeapp.dao.ProductDiscountRepository;
 import com.neicake.cafeapp.dao.ProductRepository;
 import com.neicake.cafeapp.domain.Product;
 import com.neicake.cafeapp.util.Response;
@@ -12,7 +13,9 @@ import java.util.List;
 @Service
 public class ProductService implements IProductSErvice{
     @Autowired
-    ProductRepository productDao;
+    private ProductRepository productDao;
+    @Autowired
+    private ProductDiscountRepository productDiscountRepository;
 
     public Response save(Product product){
 
@@ -35,6 +38,30 @@ public class ProductService implements IProductSErvice{
         List<Product> list=productDao.findAllByStockGreaterThanAndExpirationDateIsNotNullAndExpirationDateIsBefore(0,new Date());
         list.addAll(productDao.findAllByStockGreaterThanAndExpirationDateIsNull(0));
         return list;
+    }
+
+    @Override
+    public void completeWithDiscountBoolean(Product product) {
+        product.setDiscounted(checkIfProductIsDiscounted(product));
+    }
+
+
+    //checks if product has active discount
+    @Override
+    public boolean checkIfProductIsDiscounted(Product product) {
+        if(productDiscountRepository.findOneByActiveIsTrueAndProduct(product)!=null){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    @Override
+    public void completeListOfProductDiscountsWithDiscountBoolean(List<Product> products) {
+        for(Product product:products){
+            completeWithDiscountBoolean(product);
+        }
     }
 
 

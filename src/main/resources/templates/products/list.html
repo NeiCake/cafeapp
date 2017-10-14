@@ -48,12 +48,13 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th class='tablefilter1'>Product ID</th>
+						<th class='tablefilter1'>#</th>
+						<th >DISCOUNT PERCENT</th>
+						<th class='tablefilter2'>Product ID</th>
 						<th class='tablefilter2'>Product Type</th>
 						<th class='tablefilter3'>Product Name</th>
 						<th class='tablefilter4'>Stock</th>
 						<th class='tablefilter5'>Price</th>
-						<th class='tablefilter6'>Discounted</th>
 						<th class='tablefilter7'>Expiration date</th>
 
 
@@ -66,11 +67,26 @@
 							data-toggle="modal" data-target="#edit"
 							th:href="@{/products/{id}(id=${product.id})}"><span
 								class="glyphicon glyphicon-pencil"></span></a></td>
+						<td th:switch="${product.discounted}">
+
+
+							<a th:case="false" class="btn btn-success btn-xs"
+							   th:href="@{/products/{id}/newdiscount(id=${product.id})}">ADD DISCOUNT</a>
+
+							<a th:case="true" class="btn btn-danger btn-xs"
+							   th:href="@{/products/{id}/deletediscount(id=${product.id})}">REMOVE DISCOUNT</a>
+						</td>
+						<td th:switch="${product.discounted}">
+							<div th:case="true" th:text="${product.productDiscount.percentOffValue}">
+
+							</div>
+							<div th:case="false" th:text="NONE"></div>
+
+						</td>
 						<td th:text="${product.id}"></td>
 						<td th:text="${product.type}"></td>
 						<td th:text="${product.name}"></td>
 						<td th:text="${product.stock}"></td>
-						<td th:text="${product.price}"></td>
 						<td th:text="${product.price}"></td>
 						<td th:text="${product.expirationDate}"></td>
 					</tr>

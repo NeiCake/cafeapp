@@ -12,4 +12,7 @@ public interface IProductSErvice {
     List<Product> getAllProducts();
     Product findOneById(Long id);
     List<Product> getAllNonExpiredProductsInStock();
+    void completeWithDiscountBoolean(Product product);
+    boolean checkIfProductIsDiscounted(Product product);
+    void completeListOfProductDiscountsWithDiscountBoolean(List<Product> products);
 }

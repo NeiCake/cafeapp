@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layouts/default_layout">
+<head>
+	<title>New Discount</title>
+	<link rel="stylesheet" type="text/css"
+		  th:href="@{/css/bootstrap.min.css}"/>
+	<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script th:src="@{/js/dropdown.js}"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      -->
+
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/app.js}"></script>
+	<script th:src="@{/js/jquery-ui.js}"></script>
+
+
+</head>
+<style>
+	select.form-control {
+		-webkit-appearance: menulist;
+	}
+</style>
+<body>
+<div id="content" layout:fragment="content">
+
+
+	<th:block th:if="${message != null}">
+		<!-- /* The message code is returned from the @Controller */ -->
+		<div
+				th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=${message.message})">
+			&nbsp;
+		</div>
+	</th:block>
+
+	<form action="#" th:action="@{/products/{id}/(id=${id})}" th:object="${discount}"
+		  enctype="multipart/form-data" method="post">
+
+		<div class="row">
+			<div class="col-md-6">
+
+
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-md-8">
+						<label>Name: </label> <input type="text" required="required"
+													 th:field="*{name}" class="form-control input-md"/>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-md-8">
+						<label>Percent off: </label> <input type="text" required="required"
+													 th:field="*{percentOffValue}" class="form-control input-md"/>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-2">
+				<label></label> <input type="submit"
+									   class="btn btn-md btn-success btn-block" name="action"
+									   value="Save"/>
+			</div>
+
+		</div>
+	</form>
+</div>
+</body>
+</html>

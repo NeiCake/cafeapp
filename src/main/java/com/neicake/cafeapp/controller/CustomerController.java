@@ -60,7 +60,7 @@ public class CustomerController {
 
     @GetMapping("/customers/{id}/coupons")
     public ModelAndView listDiscountsForCustomer(@PathVariable Long id){
-        ModelAndView modelAndView=new ModelAndView("coupons/list");
+        ModelAndView modelAndView=new ModelAndView("customers/coupons/list");
         modelAndView.addObject("coupons",customerService.findOneById(id).getCoupons());
         return modelAndView;
     }
@@ -78,7 +78,7 @@ public class CustomerController {
     public String newCouponPage(@ModelAttribute Coupon coupon, Model model, @PathVariable Long id, RedirectAttributes redirectAttributes){
         model.addAttribute("coupon", coupon);
         model.addAttribute("id", id);
-        return "coupons/new";
+        return "customers/coupons/new";
     }
 
     @PostMapping("customers/{id}/deletecoupon/{couponid}")

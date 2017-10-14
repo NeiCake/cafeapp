@@ -1,5 +1,6 @@
 package com.neicake.cafeapp.domain;
 
+import org.hibernate.annotations.Where;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -25,6 +26,13 @@ public class Product {
     @Column
     private BigDecimal price;
 
+    @OneToOne(mappedBy = "product")
+    @Where(clause="active=true")
+    private ProductDiscount productDiscount;
+
+    @Transient
+    private boolean discounted;
+
 
 
     @Column
@@ -45,6 +53,14 @@ public class Product {
                 '}';
     }
 
+    public ProductDiscount getProductDiscount() {
+        return productDiscount;
+    }
+
+    public void setProductDiscount(ProductDiscount productDiscount) {
+        this.productDiscount = productDiscount;
+    }
+
     public Date getExpirationDate() {
         return expirationDate;
     }
@@ -61,6 +77,13 @@ public class Product {
         this.name = name;
     }
 
+    public boolean isDiscounted() {
+        return discounted;
+    }
+
+    public void setDiscounted(boolean discounted) {
+        this.discounted = discounted;
+    }
 
     public Long getId() {
         return id;
