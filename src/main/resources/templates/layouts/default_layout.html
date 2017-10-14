@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>HR-Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" th:href="@{/css/style.css}"/>
+    <script type="text/javascript" src="../../static/js/jquery-3.2.1.js" th:src="@{/js/jquery-3.2.1.js}"></script>
+</head>
+<body>
+<div id="header" th:replace="fragments/header :: header" th:with="menu=${menu}"></div>
+<div id="content" layout:fragment="content">
+Dummy content
+</div>
+<div id="footer" th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

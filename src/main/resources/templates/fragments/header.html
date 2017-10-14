@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
+<script type="text/javascript" src="../../static/js/jquery-3.2.1.js"></script>
+
+</head>
+<body>
+	<div id="header" th:fragment="header">
+		<div id="header-menu" class="pattern">
+			<div id="header-logo">
+				<h1 id="logo" class="logo">
+					<a href="#"></a>
+				</h1>
+			</div>
+			<div id="header-top">
+				<span> <span class="application-name"> <span
+						style="color: #3ef25f">Test</span> CAFE
+				</span> <span class="application-version">v.0.1</span>
+				</span>
+				<div sec:authorize="isAuthenticated()" class="logout">
+					<a href="#" th:href="@{/logout}"> Logout </a>
+				</div>
+				<div sec:authorize="!isAuthenticated()" class="logout">
+					<a href="#" th:href="@{/login}"> Log In </a>
+				</div>
+				<div class="login-info">
+					<em> <span sec:authorize="isAuthenticated()"> Logged
+							user: <strong><span sec:authentication="name"></span></strong> |
+							Roles: <span sec:authentication="principal.authorities"></span>
+					</span>
+					</em>
+				</div>
+			</div>
+			<div id="header-bottom">
+				<div class="breadcrumbPanel" id="breadcrumbsPanel3">
+					<ul class="sf-menu sf-js-enabled sf-arrows" id="navigation-menu">
+					</ul>
+					<ul class="menubar">
+						<li
+							th:classappend="${#httpServletRequest.getRequestURI().contains((#httpServletRequest.getContextPath()+'/products')) ? 'active':''}"><a
+							th:href="@{/products}">Products</a></li>
+						<li
+							th:classappend="${#httpServletRequest.getRequestURI() == (#httpServletRequest.getContextPath()+'/newproduct') ? 'active':''}"><a
+							th:href="@{/newproduct}">New Product</a></li>
+					</ul>
+
+				</div>
+				<div class="user-inbox"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

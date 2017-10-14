@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/default_layout">
+<head>
+<title>Edit Candidate</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      -->
+<script th:src="@{/js/dropdown.js}"></script>
+
+
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/jquery-ui.js}"></script>
+<script>
+	$(function() {
+		$(".datepicker").datepicker({
+			dateFormat : 'yy-mm-dd'
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="content" layout:fragment="content">
+		<th:block th:if="${message != null}">
+			<!-- /* The message code is returned from the @Controller */ -->
+			<div
+				th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=${message.message})">&nbsp;</div>
+		</th:block>
+
+		<form action="#" th:action="@{/newproduct}" th:object="${product}"
+			enctype="multipart/form-data" method="post">
+			<div class="row">
+				<div class="col-md-2">
+					<label></label> <input type="submit"
+						class="btn btn-success btn-block  btn-md" name="action"
+						value="Save" />
+				</div>
+
+				<div class="col-md-3" style="text-align: center">
+					<h3>Edit product</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row" style="margin-top: 10px; display: none">
+						<div class="col-md-8">
+							<label>Id</label> <input type="text" th:field="*{id}"
+								class="form-control input-md" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Fiscal Year</label> <select class="form-control"
+								th:field="*{fiscalYear}" id="dropFiscalYear">
+								<option value="">Select Fiscal Year</option>
+								<option th:each="fiscalYear : ${selectFiscalYear}"
+									th:value="${fiscalYear.value}" th:text="${fiscalYear.value}"></option>
+							</select>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Name: </label> <input type="text" required="required"
+								th:field="*{name}" class="form-control input-md" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Platform: </label> <select class="form-control"
+								onchange="showCobiIEdit()" th:field="*{platform}" id="platform">
+								<option value="">Select Platform</option>
+								<option th:each="platform : ${selectPlatform}"
+									th:value="${platform.value}" th:text="${platform.value}"></option>
+							</select>
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Skill/Project: </label> <input type="text"
+								th:field="*{skill}" class="form-control input-md" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Interview Date: </label>
+							<p style="color: red;"
+								th:if="${#fields.hasErrors('interviewDate')}"
+								th:errors="*{interviewDate}">Interview Date error</p>
+							<input type="text" th:field="*{interviewDate}"
+								class="form-control input-md datepicker" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Offer Date </label>
+							<p style="color: red;" th:if="${#fields.hasErrors('offerDate')}"
+								th:errors="*{offerDate}">Offer Date error</p>
+
+							<input type="text" th:field="*{offerDate}"
+								class="form-control input-md datepicker" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Candidate Status: </label> <select class="form-control"
+								th:field="*{candidateStatus}" id="dropCandidateStatus">
+								<option value="">Select Offer Status</option>
+								<option th:each="candidateStatus : ${selectCandidateStatus}"
+									th:value="${candidateStatus.value}"
+									th:text="${candidateStatus.value}"></option>
+							</select>
+						</div>
+					</div>
+					<!--  	<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Offer Rejection Reason: </label> <select
+								class="form-control" th:field="*{offeredRejectionReason}"
+								id="dropOfferRejectionReason">
+								<option value="">Select Offered Rejection Reason</option>
+								<option
+									th:each="offeredRejectionReason : ${selectOfferRejectionReason}"
+									th:value="${offeredRejectionReason.value}"
+									th:text="${offeredRejectionReason.value}"></option>
+							</select>
+						</div>
+					</div> -->
+					<div class="row" style="margin-top: 10px;">
+
+						<div class="col-md-8">
+							<label>Expected Salary EUR: </label>
+							<p style="color: red;"
+								th:if="${#fields.hasErrors('expectedSalaryEur')}"
+								th:errors="*{expectedSalaryEur}">Salary error</p>
+							<input type="text" th:field="*{expectedSalaryEur}"
+								class="form-control input-md" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Career Level: </label> <select class="form-control"
+								th:field="*{level}" id="dropLevel">
+								<option value="">Select Level</option>
+								<option th:each="level : ${selectLevel}"
+									th:value="${level.value}" th:text="${level.value}"></option>
+							</select>
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>COBI Interviewer </label> <select class="form-control"
+								th:value="*{interviewerCOBI}" th:field="*{interviewerCOBI}"
+								th:text="*{interviewerCOBI}" id="cobiInterviewer">
+							</select>
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>HR interviewer: </label> <input type="text"
+								th:field="*{interviewerName}" class="form-control input-md"
+								readonly="true" />
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Status </label> <select class="form-control"
+								th:field="*{status}" id="dropStatus">
+								<option value="">Select Status</option>
+								<option th:each="status : ${selectStatus}"
+									th:value="${status.value}" th:text="${status.value}"></option>
+							</select>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Gender: </label> <select class="form-control"
+								th:field="*{gender}" id="dropGender">
+								<option value="">Select Gender</option>
+								<option th:each="gender : ${selectGender}"
+									th:value="${gender.value}" th:text="${gender.value}"></option>
+							</select>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Domain: </label> <select class="form-control"
+								th:field="*{domain}" id="dropDomain">
+								<option value="">Select Domain</option>
+								<option th:each="domain : ${selectDomain}"
+									th:value="${domain.value}" th:text="${domain.value}"></option>
+							</select>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Phone screening: </label>
+							<p style="color: red;"
+								th:if="${#fields.hasErrors('phonecallDate')}"
+								th:errors="*{phonecal;Date}">Phonecall Date error</p>
+
+							<input type="text" th:field="*{phonecallDate}"
+								class="form-control input-md datepicker" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>COBI: </label>
+							<p style="color: red;" th:if="${#fields.hasErrors('cobiDate')}"
+								th:errors="*{cobiDate}">COBI Date error</p>
+
+							<input type="text" th:field="*{cobiDate}"
+								class="form-control input-md datepicker" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Start Date </label>
+							<p style="color: red;" th:if="${#fields.hasErrors('startDate')}"
+								th:errors="*{startDate}">Start Date error</p>
+
+							<input type="text" th:field="*{startDate}"
+								th:value="*{startDate}" class="form-control input-md datepicker" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<div id="reason" class="test"
+								th:classappend="${#strings.containsIgnoreCase((candidate.candidateStatus!=null?candidate.candidateStatus:''),'Rejected')? '':'hidden'}">
+								<label>Rejection Reason: </label> <select class="form-control"
+									th:field="*{rejectionReason}" id="dropRejectionReason">
+									<option value="">Select Rejection Reason</option>
+									<option th:each="rejectionReason : ${selectRejectionReason}"
+										th:value="${rejectionReason.value}"
+										th:text="${rejectionReason.value}"></option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Comments: </label> <input type="text"
+								th:field="*{comments}" class="form-control input-md" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Offered Salary EUR: </label>
+							<p style="color: red;"
+								th:if="${#fields.hasErrors('offeredSalaryEur')}"
+								th:errors="*{offeredSalaryEur}">Salary error</p>
+							<input type="text" th:field="*{offeredSalaryEur}"
+								class="form-control input-md" />
+						</div>
+					</div>
+
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>Source: </label> <input type="text" th:field="*{source}"
+								class="form-control input-md" />
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>CV: </label> <input type="file" name="cvFile"
+								style="display: inline-block; margin-left: 10px;" accept=".pdf" />
+							<div th:if="${candidate.cv != null}">
+								<a th:href="@{/download/cv/{id}(id=${candidate.id})}"
+									title="Download CV"><i class="fa fa-file-pdf-o"
+									style="font-size: 30px; color: red"> </i> </a>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label>CoBI Form: </label> <input type="file"
+								style="display: inline-block; margin-left: 10px;"
+								name="cobiFormFile" accept=".xls,.xlsx" />
+							<div th:if="${candidate.cobiForm != null}">
+								<a th:href="@{/download/cobiForm/{id}(id=${candidate.id})}"
+									title="Download CoBI Form"><i class="fa fa-file-excel-o"
+									style="font-size: 30px; color: green"> </i> </a>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 10px;">
+						<div class="col-md-8">
+							<label> HR screening form: </label> <input type="file"
+								style="display: inline-block; margin-left: 10px;"
+								name="hrScreeningFormFile" accept=".xls,.xlsx" />
+							<div th:if="${candidate.hrScreeningForm != null}">
+								<a th:href="@{/download/hrScreeningForm/{id}(id=${candidate.id})}"
+									title="Download Hr Screening Form"><i class="fa fa-file-excel-o"
+									style="font-size: 30px; color: green"> </i> </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 10px;">
+				<div class="col-md-2">
+					<label></label> <input type="submit"
+						class="btn btn-md btn-success btn-block" name="action"
+						value="Save" />
+				</div>
+				<div class="col-md-2">
+					<label></label> <input type="submit"
+						class="btn btn-md btn-success btn-block" name="action"
+						value="Save and add another candidate" />
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

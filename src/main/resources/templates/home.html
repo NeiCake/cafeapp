@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default_layout">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css"
+          href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script th:src="@{/js/home.js}"></script>
+</head>
+<body>
+<div id="content" layout:fragment="content">
+    <h3>Home Page</h3>
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="#" th:action="@{/download.xls}">
+                <button class="btn btn-success" type="submit" id="btnExport">
+                    <span class="glyphicon glyphicon-export">Export Candidates To Excel File</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

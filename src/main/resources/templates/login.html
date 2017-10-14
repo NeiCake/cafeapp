@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>HR-Tracker</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}" />
+
+<link rel="stylesheet" th:href="@{/css/login.css}"
+	href="../../static/css/login.css" />
+<link rel="stylesheet" type="text/css" href="../../static/css/style.css"
+	th:href="@{/css/style.css}" />
+<script type="text/javascript" src="../../static/js/jquery-3.2.1.js"
+	th:src="@{/js/jquery-3.2.1.js}"></script>
+</head>
+<body>
+	<div id="header" th:fragment="header">
+		<div id="header-menu" class="pattern">
+			<div id="header-logo">
+				<h1 id="logo" class="logo">
+					<a href="#"></a>
+				</h1>
+			</div>
+			<div id="header-top">
+				<span> <span class="application-name">Test <span
+						style="color: #3ef25f">Technology</span> CAFE
+				</span> <span class="application-version">v.0.1</span>
+				</span>
+
+
+
+			</div>
+			<div id="header-bottom">
+
+				<div class="user-inbox"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content container" id="content">
+		<div class="row" style="margin-top: 20px">
+			<div
+				class="col-xs-12 col-sm-8 col-md-5 col-sm-offset-2 col-md-offset-3">
+				<form th:action="@{/login}" method="post">
+					<fieldset>
+						<h1>Please Sign In</h1>
+
+						<div th:if="${param.error}">
+							<div class="alert alert-danger">Invalid username and
+								password.</div>
+						</div>
+						<div th:if="${param.logout}">
+							<div class="alert alert-info">You have been logged out.</div>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="username" id="username"
+								class="form-control input-lg" placeholder="Username"
+								required="true" autofocus="true" />
+						</div>
+						<div class="form-group">
+							<input type="password" name="password" id="password"
+								class="form-control input-lg" placeholder="Password"
+								required="true" />
+						</div>
+
+						<div class="row" >
+							<div class="col-xs-12 col-sm-12 col-md-12" style="text-align: center;">
+								<input type="submit" class="btn btn-lg btn-success btn-block"
+									value="Sign In" />
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="footer" class="pattern" th:fragment="footer">
+		<div id="footer-content">
+			<span>© 2017 CAKE</span>
+		</div>
+	</div>
+</body>
+</html>
