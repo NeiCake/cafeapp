@@ -32,7 +32,7 @@ public class CustomerController {
     public ModelAndView getAllCustomers() {
 
         ModelAndView modelAndView = new ModelAndView("customers/list");
-        modelAndView.addObject("customers", customerService.getAllCustomers());
+        modelAndView.addObject("customers", customerService.getAllActiveCustomers());
         return modelAndView;
 
     }
@@ -83,7 +83,7 @@ public class CustomerController {
     @PostMapping("customers/{id}/deletecoupon/{couponid}")
     public String deleteCoupon(@ModelAttribute Coupon coupon, Model model,@PathVariable("id") Long id, @PathVariable("couponid") Long couponid, RedirectAttributes redirectAttributes){
 
-        couponService.deleteCoupon(id);
+        couponService.deleteCoupon(couponid);
 
         return "redirect:/customers/"+id+"/coupons";
     }

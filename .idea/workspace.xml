@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee51e645-3bfb-40f5-9095-16c615f502fb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/purchases/newnext.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/config/PasswordEncoder.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cafeapp/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/CustomerController.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/CustomerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/ProductController.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/ProductController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/PurchaseController.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/PurchaseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/dao/ProductRepository.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/dao/ProductRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/dao/CustomerRepository.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/dao/CustomerRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Customer.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Customer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Product.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Purchase.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Purchase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CouponService.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CouponService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CustomerService.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CustomerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICouponService.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICouponService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICustomerService.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICustomerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/IProductSErvice.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/IProductSErvice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ProductService.java" afterPath="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ProductService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/edit.html" afterPath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/list.html" afterPath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/new.html" afterPath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/new.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/fragments/header.html" afterPath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/fragments/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/products/list.html" afterPath="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/products/list.html" />
     </list>
     <ignored path="$PROJECT_DIR$/../cafeapp/out/" />
     <ignored path="$PROJECT_DIR$/../cafeapp/target/" />
@@ -35,40 +21,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Product.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="123" column="27" lean-forward="false" selection-start-line="123" selection-start-column="27" selection-end-line="123" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-                <element signature="e#852#853#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/ProductController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="43" column="29" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="44" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Purchase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Purchase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="155" column="37" lean-forward="false" selection-start-line="155" selection-start-column="37" selection-end-line="155" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="new.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/resources/templates/purchases/new.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -85,53 +37,99 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PurchaseController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/PurchaseController.java">
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="50" column="34" lean-forward="false" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+            <state relative-caret-position="187">
+              <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#536#537#0" expanded="true" />
+                <element signature="e#572#573#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PurchaseService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/PurchaseService.java">
+      <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IPurchaseService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/IPurchaseService.java">
+      <file leaf-file-name="ProductDiscount.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/ProductDiscount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+            <state relative-caret-position="204">
+              <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+              <folding>
+                <element signature="e#245#246#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/CustomerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/list.html">
+      <file leaf-file-name="CustomerService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CustomerService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="421">
-              <caret line="71" column="83" lean-forward="false" selection-start-line="71" selection-start-column="83" selection-end-line="71" selection-end-column="83" />
+              <caret line="55" column="49" lean-forward="false" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+              <folding>
+                <element signature="e#1416#1417#0" expanded="true" />
+                <element signature="e#1472#1473#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/dao/CustomerRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newnext.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/resources/templates/purchases/newnext.html">
+      <file leaf-file-name="IProductDiscountService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/IProductDiscountService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="129" column="7" lean-forward="false" selection-start-line="129" selection-start-column="7" selection-end-line="129" selection-end-column="7" />
+            <state relative-caret-position="204">
+              <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICouponService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICouponService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CouponService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CouponService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="40" column="53" lean-forward="false" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -160,7 +158,6 @@
       <find>another</find>
       <find>date</find>
       <find>deletediscount</find>
-      <find>delete</find>
       <find>coup</find>
       <find>today</find>
       <find>Add c</find>
@@ -173,6 +170,9 @@
       <find>getAllNonExpiredProductsInStock</find>
       <find>select</find>
       <find>complete</find>
+      <find>customercontro</find>
+      <find>delete</find>
+      <find>productdisc</find>
       <find>purchase</find>
     </findStrings>
   </component>
@@ -187,7 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Coasters.java" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Coffee.java" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Cups.java" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Desert.java" />
@@ -222,22 +221,23 @@
         <option value="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/edit.html" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/products/list.html" />
-        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICustomerService.java" />
-        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CustomerService.java" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICouponService.java" />
-        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CouponService.java" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/list.html" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ProductService.java" />
-        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/CustomerController.java" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/purchases/list.html" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/fragments/header.html" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/purchases/newnext.html" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/IPurchaseService.java" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Purchase.java" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Product.java" />
-        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Customer.java" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/resources/templates/purchases/new.html" />
         <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/PurchaseController.java" />
+        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CouponService.java" />
+        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Customer.java" />
+        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICustomerService.java" />
+        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/dao/CustomerRepository.java" />
+        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CustomerService.java" />
+        <option value="$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/CustomerController.java" />
       </list>
     </option>
   </component>
@@ -389,6 +389,16 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="customers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cafeapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cafeapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="customers" type="462c0819:PsiDirectoryNode" />
+              <item name="coupons" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cafeapp" type="b2602c69:ProjectViewProjectNode" />
@@ -729,7 +739,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508053088179</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="purchases non-functional">
+      <created>1508067106420</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1508067106420</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -744,7 +761,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -770,7 +787,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="product discounts" />
     <MESSAGE value="purchases soon" />
-    <option name="LAST_COMMIT_MESSAGE" value="purchases soon" />
+    <MESSAGE value="purchases non-functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="purchases non-functional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -816,14 +834,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Discount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -915,34 +928,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/IProductDiscountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ProductDiscountService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/ProductDiscount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#330#331#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -987,57 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/coupons/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="48" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/dao/CustomerRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICouponService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CouponService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="e#1143#1144#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ProductService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1072,14 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="48" column="138" lean-forward="false" selection-start-line="48" selection-start-column="138" selection-end-line="48" selection-end-column="138" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/CustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="42" column="49" lean-forward="false" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1150,14 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="43" column="29" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="44" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/PurchaseService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1178,14 +1102,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Customer.java">
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Purchase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="50" column="37" lean-forward="false" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+        <state relative-caret-position="-38">
+          <caret line="155" column="37" lean-forward="false" selection-start-line="155" selection-start-column="37" selection-end-line="155" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/PurchaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/resources/templates/customers/coupons/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICouponService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CouponService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="40" column="53" lean-forward="false" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1203,21 +1158,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Purchase.java">
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="155" column="37" lean-forward="false" selection-start-line="155" selection-start-column="37" selection-end-line="155" selection-end-column="37" />
+        <state relative-caret-position="85">
+          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/PurchaseController.java">
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/ProductDiscount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="50" column="34" lean-forward="false" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+        <state relative-caret-position="204">
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Discount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/domain/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <element signature="e#536#537#0" expanded="true" />
+            <element signature="e#572#573#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/ICustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="43" lean-forward="false" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/IProductDiscountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/dao/CustomerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/service/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="55" column="49" lean-forward="false" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+          <folding>
+            <element signature="e#1416#1417#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cafeapp/src/main/java/com/neicake/cafeapp/controller/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

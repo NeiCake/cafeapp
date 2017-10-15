@@ -36,7 +36,9 @@ public class CouponService implements ICouponService {
     @Override
     public void deleteCoupon(Long id) {
 
+        System.out.println("DELETEING coupon "+id);
         Coupon coupon=couponDao.findOne(id);
+        System.out.println("DELETEING coupon "+coupon);
         coupon.setActive(false);
         couponDao.save(coupon);
     }

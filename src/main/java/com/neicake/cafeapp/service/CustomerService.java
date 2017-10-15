@@ -32,6 +32,7 @@ public class CustomerService implements ICustomerService {
         return list;
     }
 
+
     @Override
     public Customer findOneById(Long id) {
         return customerDao.findOne(id);
@@ -44,7 +45,15 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public void deleteCustomer(Long id) {
-        customerDao.delete(id);
+
+        Customer c=customerDao.findOne(id);
+        c.setActive(false);
+        customerDao.save(c);
+    }
+
+    @Override
+    public List<Customer> getAllActiveCustomers() {
+        return customerDao.findAllByActive(true);
     }
 
 }

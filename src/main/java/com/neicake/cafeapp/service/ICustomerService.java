@@ -15,4 +15,6 @@ public interface ICustomerService {
 
     void delete(Coupon coupon);
     void deleteCustomer(Long id);
+
+    List<Customer> getAllActiveCustomers();
 }

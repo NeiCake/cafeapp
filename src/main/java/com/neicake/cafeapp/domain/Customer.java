@@ -11,12 +11,21 @@ public class Customer {
     private Long id;
     @Column
     private String name;
+    @Column
+    private boolean active=true;
 
 
     @OneToMany(mappedBy = "customer")
     @Where(clause="active=true")
     private List<Coupon> coupons;
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 
     public Long getId() {
         return id;
