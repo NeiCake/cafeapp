@@ -2,6 +2,7 @@ package com.neicake.cafeapp.service;
 
 import com.neicake.cafeapp.domain.Product;
 import com.neicake.cafeapp.util.Response;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface IProductSErvice {
     void completeWithDiscountBoolean(Product product);
     boolean checkIfProductIsDiscounted(Product product);
     void completeListOfProductDiscountsWithDiscountBoolean(List<Product> products);
+    List<Product> getAllExpiredProducts();
+    List<Product> getAllStockZeroProducts();
 }

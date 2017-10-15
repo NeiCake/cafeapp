@@ -53,7 +53,6 @@ public class CustomerController {
     @PostMapping("/customers")
     public String saveCustomer(@ModelAttribute Customer customer, Model model, RedirectAttributes redirectAttributes) {
 
-        System.out.println("-------"+customer.getId()+"---------------dd");
         customerService.save(customer);
         return "redirect:/customers";
     }
@@ -83,11 +82,16 @@ public class CustomerController {
 
     @PostMapping("customers/{id}/deletecoupon/{couponid}")
     public String deleteCoupon(@ModelAttribute Coupon coupon, Model model,@PathVariable("id") Long id, @PathVariable("couponid") Long couponid, RedirectAttributes redirectAttributes){
-        coupon.setId(couponid);
-        System.out.println("controller received coupon to delete ----"+coupon);
-        couponService.delete(coupon);
+
+        couponService.deleteCoupon(id);
 
         return "redirect:/customers/"+id+"/coupons";
+    }
+
+    @GetMapping("/customers/{id}/delete")
+    public  String deleteCustomer(@PathVariable Long id){
+        customerService.deleteCustomer(id);
+        return "redirect:/customers";
     }
 }
 

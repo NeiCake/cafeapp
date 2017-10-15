@@ -43,6 +43,11 @@
 				th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=${message.message})">&nbsp;</div>
 		</th:block>
 
+
+		<div class="row">
+
+			<a class="btn btn-primary" th:href="@{/newproduct}" role="button">Add Product</a>
+		</div>
 		<div class="row table-responsive">
 			<table class="table">
 				<thead>

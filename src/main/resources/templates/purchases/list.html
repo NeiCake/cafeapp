@@ -43,39 +43,46 @@
 				th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=${message.message})">&nbsp;</div>
 		</th:block>
 
+
 		<div class="row">
 
-			<a class="btn btn-primary" th:href="@{/newcustomer}" role="button">Add Customer</a>
+			<a class="btn btn-primary" th:href="@{/newpurchase}" role="button">NEW PURCHASE</a>
 		</div>
 		<div class="row table-responsive">
 			<table class="table">
 				<thead>
 					<tr>
-						<th>Edit</th>
-						<th>DELETE</th>
-						<th>See Coupons</th>
-						<th class='tablefilter1'>Customer ID</th>
-						<th class='tablefilter2'>Something</th>
-						<th class='tablefilter3'>Customer Name</th>
+						<th >Purchase ID</th>
+						<th class='tablefilter2'>Customer Name</th>
+						<th class='tablefilter2'>Product Type</th>
+						<th class='tablefilter3'>Amount</th>
+						<th class='tablefilter4'>Product Name</th>
+						<th class='tablefilter5'>Coupon applied percentage</th>
+						<th class='tablefilter7'>Discount applied percentage</th>
 
+						<th class='tablefilter8'>Total paid  </th>
 
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:if="${customers !=null}"
-						th:each="customer : ${customers}">
-						<td><a class="btn btn-success btn-xs" data-title="Edit"
-							data-toggle="modal" data-target="#edit"
-							th:href="@{/customers/{id}(id=${customer.id})}"><span
-								class="glyphicon glyphicon-pencil"></span></a></td>
-						<td><a class="btn btn-danger btn-xs"
-							   th:href="@{/customers/{id}/delete(id=${customer.id})}">DELETE</a></td>
-						<td><a class="btn btn-success btn-xs" data-title="Coupons"
-							   data-toggle="modal" data-target="#coupons"
-							   th:href="@{/customers/{id}/coupons(id=${customer.id})}">COUPONS</a></td>
-						<td th:text="${customer.id}"></td>
-						<td th:text="${customer.id}"></td>
-						<td th:text="${customer.name}"></td>
+					<tr th:if="${purchases !=null}"
+						th:each="purchase : ${purchases}">
+
+						<td th:switch="${product.discounted}">
+							<div th:case="true" th:text="${product.productDiscount.percentOffValue}">
+
+							</div>
+							<div th:case="false" th:text="NONE"></div>
+
+						</td>
+						<td th:text="${purchase.id}"></td>
+						<td th:text="${purchase.customer.name}"></td>
+						<th th:text="${purchase.product.productType}"></th>
+						<td th:text="${purchase.amount}"></td>
+						<td th:text="${purchase.product.name}"></td>
+						<td th:text="${purchase.coupon.percentOffValue}"></td>
+						<td th:text="${purchase.productDiscount.percentOffValue}"></td>
+						<td th:text="${purchase.totalPaidWithDiscount}"></td>
 					</tr>
 				</tbody>
 			</table>

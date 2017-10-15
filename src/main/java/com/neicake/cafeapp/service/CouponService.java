@@ -28,9 +28,16 @@ public class CouponService implements ICouponService {
 
     @Override
     public void delete(Coupon coupon) {
-        System.out.println("deleting "+coupon);
         coupon.setActive(false);
         couponDao.save(coupon);
 
+    }
+
+    @Override
+    public void deleteCoupon(Long id) {
+
+        Coupon coupon=couponDao.findOne(id);
+        coupon.setActive(false);
+        couponDao.save(coupon);
     }
 }

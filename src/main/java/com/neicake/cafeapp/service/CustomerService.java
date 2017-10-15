@@ -41,4 +41,10 @@ public class CustomerService implements ICustomerService {
     public void delete(Coupon coupon) {
         couponDao.delete(coupon);
     }
+
+    @Override
+    public void deleteCustomer(Long id) {
+        customerDao.delete(id);
+    }
+
 }

@@ -26,9 +26,9 @@ public class ProductController {
     public ModelAndView getAllProducts() {
 
         ModelAndView modelAndView = new ModelAndView("products/list");
-        List<Product> list= productService.getAllProducts();
+        List<Product> list = productService.getAllProducts();
         productService.completeListOfProductDiscountsWithDiscountBoolean(list);
-        modelAndView.addObject("products",list);
+        modelAndView.addObject("products", list);
         return modelAndView;
 
     }
@@ -56,19 +56,43 @@ public class ProductController {
     }
 
 
+    @GetMapping("products/good")
+    public String goodProducts(Model model) {
+        List<Product> list = productService.getAllNonExpiredProductsInStock();
+        productService.completeListOfProductDiscountsWithDiscountBoolean(list);
+        model.addAttribute("products", list);
+        return "products/list";
+    }
 
+    @GetMapping("products/bad/expired")
+    public String badProductsExpired(Model model) {
+
+        List<Product> list = productService.getAllExpiredProducts();
+        productService.completeListOfProductDiscountsWithDiscountBoolean(list);
+        model.addAttribute("products", list);
+        return "products/list";
+    }
+
+    @GetMapping("products/bad/nostock")
+    public String badProductsNoStock(Model model) {
+        List<Product> list = productService.getAllStockZeroProducts();
+        productService.completeListOfProductDiscountsWithDiscountBoolean(list);
+        model.addAttribute("products", list);
+
+        return "products/list";
+    }
 ////////////////
 
     @GetMapping("/products/{id}/discounts")
-    public ModelAndView listDiscountsForProduct(@PathVariable Long id){
-        ModelAndView modelAndView=new ModelAndView("products/discounts/list");
-        modelAndView.addObject("discounts",productService.findOneById(id).getProductDiscount());
+    public ModelAndView listDiscountsForProduct(@PathVariable Long id) {
+        ModelAndView modelAndView = new ModelAndView("products/discounts/list");
+        modelAndView.addObject("discounts", productService.findOneById(id).getProductDiscount());
         return modelAndView;
     }
 
     @PostMapping("/products/{id}/")
-    public String saveCoupon(@ModelAttribute ProductDiscount productDiscount, Model model, @PathVariable Long id, RedirectAttributes redirectAttributes){
-        Product toSave=productService.findOneById(id);
+    public String saveCoupon(@ModelAttribute ProductDiscount productDiscount, Model model, @PathVariable Long id, RedirectAttributes redirectAttributes) {
+        Product toSave = productService.findOneById(id);
         productDiscount.setProduct(toSave);
         productDiscountService.saveProductDiscount(productDiscount);
         return "redirect:/products/";
@@ -76,7 +100,7 @@ public class ProductController {
 
 
     @GetMapping("/products/{id}/newdiscount")
-    public String newProductDiscount(@ModelAttribute ProductDiscount discount, Model model, @PathVariable Long id, RedirectAttributes redirectAttributes){
+    public String newProductDiscount(@ModelAttribute ProductDiscount discount, Model model, @PathVariable Long id, RedirectAttributes redirectAttributes) {
         model.addAttribute("discount", discount);
         model.addAttribute("id", id);
         return "products/discounts/new";
@@ -84,8 +108,8 @@ public class ProductController {
 
 
     @GetMapping("/products/{id}/deletediscount")
-    public String unDiscountProduct(@PathVariable Long id){
-        ProductDiscount discount=productService.findOneById(id).getProductDiscount();
+    public String unDiscountProduct(@PathVariable Long id) {
+        ProductDiscount discount = productService.findOneById(id).getProductDiscount();
         productDiscountService.delete(discount);
         return "redirect:/products";
     }

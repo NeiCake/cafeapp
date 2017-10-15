@@ -10,6 +10,10 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<Product,Long> {
 
-    List<Product> findAllByStockGreaterThanAndExpirationDateIsNotNullAndExpirationDateIsBefore(int minimumStock, Date end);
+    List<Product> findAllByStockGreaterThanAndExpirationDateIsNotNullAndExpirationDateIsAfter(int minimumStock, Date end);
     List<Product> findAllByStockGreaterThanAndExpirationDateIsNull(int minimumStock);
+    List<Product> findAllByStock(int stock);
+    List<Product> findAllByExpirationDateIsNotNullAndExpirationDateIsBefore(Date date);
+    List<Product> findAllByExpirationDateIsNull();
+    List<Product> findAllByStockGreaterThan(int stock);
 }

@@ -9,11 +9,11 @@ import com.neicake.cafeapp.service.IPurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.jws.WebParam;
 import java.util.List;
 
 @Controller
@@ -29,16 +29,44 @@ public class PurchaseController {
     @GetMapping("purchases/{days}")
     public ModelAndView listPurchasesForNDays(@PathVariable int days, RedirectAttributes redirectAttributes){
 
+        ModelAndView modelAndView = new ModelAndView("purchases/list");
+        modelAndView.addObject("purchases",purchaseService.listAllPurchasesForLastDays(days));
+        return  modelAndView;
+    }
+
+    @GetMapping("/purchases")
+    public ModelAndView listPurchases(){
+
+        ModelAndView modelAndView = new ModelAndView("purchases/list");
+        modelAndView.addObject("purchases",purchaseService.listAllPurchases());
+        return  modelAndView;
     }
 
 
-    @GetMapping("purchases/newpurchase")
-    public String newPurchase(Model model, RedirectAttributes redirectAttributes, Purchase purchase){
+
+    @GetMapping("/newpurchase")
+    public String newPurchase(Model model, RedirectAttributes redirectAttributes){
+
+        Purchase purchase=new Purchase();
+        Customer c=new Customer();
+        Product p=new Product();
+        purchase.setCustomer(c);
+        purchase.setProduct(p);
+        model.addAttribute("purchase",purchase);
         List<Customer> customerList=customerService.getAllCustomers();
         model.addAttribute("customers",customerList);
         List<Product> productList=productSErvice.getAllNonExpiredProductsInStock();
         model.addAttribute("products", productList);
 
+        return "purchases/new";
 
+    }
+
+    @PostMapping("/newpurchase")
+    public String newPurchase(Purchase purchase){
+        System.out.println(purchase);
+        purchaseService.performPurchase(purchase);
+
+        return "redirect:/purchases";
     }
 }

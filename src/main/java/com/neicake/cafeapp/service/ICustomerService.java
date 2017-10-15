@@ -14,4 +14,5 @@ public interface ICustomerService {
     Customer findOneById(Long id);
 
     void delete(Coupon coupon);
+    void deleteCustomer(Long id);
 }

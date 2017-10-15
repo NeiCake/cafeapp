@@ -15,4 +15,6 @@ public interface ICouponService{
     Response saveCoupon(Coupon coupon);
 
     void delete(Coupon coupon);
+
+    void deleteCoupon(Long id);
 }

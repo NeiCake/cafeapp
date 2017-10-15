@@ -42,5 +42,28 @@ public class Customer {
         this.coupons = coupons;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Customer)) return false;
+
+        Customer customer = (Customer) o;
+
+        if (getId() != null ? !getId().equals(customer.getId()) : customer.getId() != null) return false;
+        if (getName() != null ? !getName().equals(customer.getName()) : customer.getName() != null) return false;
+        return getCoupons() != null ? getCoupons().equals(customer.getCoupons()) : customer.getCoupons() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getId() != null ? getId().hashCode() : 0;
+        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+        result = 31 * result + (getCoupons() != null ? getCoupons().hashCode() : 0);
+        return result;
+    }
 }

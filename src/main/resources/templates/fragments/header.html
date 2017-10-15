@@ -16,22 +16,11 @@
 			</div>
 			<div id="header-top">
 				<span> <span class="application-name"> <span
-						style="color: #3ef25f">Test</span> CAFE
+						style="color: #3ef25f">StarStruck</span> CAFE
 				</span> <span class="application-version">v.0.1</span>
 				</span>
-				<div sec:authorize="isAuthenticated()" class="logout">
-					<a href="#" th:href="@{/logout}"> Logout </a>
-				</div>
-				<div sec:authorize="!isAuthenticated()" class="logout">
-					<a href="#" th:href="@{/login}"> Log In </a>
-				</div>
-				<div class="login-info">
-					<em> <span sec:authorize="isAuthenticated()"> Logged
-							user: <strong><span sec:authentication="name"></span></strong> |
-							Roles: <span sec:authentication="principal.authorities"></span>
-					</span>
-					</em>
-				</div>
+
+
 			</div>
 			<div id="header-bottom">
 				<div class="breadcrumbPanel" id="breadcrumbsPanel3">
@@ -40,17 +29,27 @@
 					<ul class="menubar">
 						<li
 							th:classappend="${#httpServletRequest.getRequestURI().contains((#httpServletRequest.getContextPath()+'/products')) ? 'active':''}"><a
-							th:href="@{/products}">Products</a></li>
+							th:href="@{/products}">ALL Products</a></li>
 
 						<li
-								th:classappend="${#httpServletRequest.getRequestURI() == (#httpServletRequest.getContextPath()+'/newproduct') ? 'active':''}"><a
-								th:href="@{/newproduct}">New Product</a></li>
+								th:classappend="${#httpServletRequest.getRequestURI().contains((#httpServletRequest.getContextPath()+'/products/good')) ? 'active':''}"><a
+								th:href="@{/products/good}">Sellable Products</a></li>
+						<li
+								th:classappend="${#httpServletRequest.getRequestURI().contains((#httpServletRequest.getContextPath()+'/products/bad/nostock')) ? 'active':''}"><a
+								th:href="@{/products/bad/nostock}">Out Of Stock Products</a></li>
+
+						<li
+								th:classappend="${#httpServletRequest.getRequestURI().contains((#httpServletRequest.getContextPath()+'/products/bad/expired')) ? 'active':''}"><a
+								th:href="@{/products/bad/expired}">Expired Products</a></li>
+
 						<li
 								th:classappend="${#httpServletRequest.getRequestURI() == (#httpServletRequest.getContextPath()+'/customers') ? 'active':''}"><a
 								th:href="@{/customers}">Customers</a></li>
 						<li
-								th:classappend="${#httpServletRequest.getRequestURI() == (#httpServletRequest.getContextPath()+'/newcustomer') ? 'active':''}"><a
-								th:href="@{/newcustomer}">New Customer</a></li>
+								th:classappend="${#httpServletRequest.getRequestURI() == (#httpServletRequest.getContextPath()+'/purchases') ? 'active':''}"><a
+								th:href="@{/purchases}">PURCHASES</a></li>
+
+
 					</ul>
 
 				</div>

@@ -42,15 +42,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", type=" + type +
-                ", stock=" + stock +
-                ", price=" + price +
-                ", discounted=" +
-                ", expirationDate=" + expirationDate +
-                '}';
+        return name;
     }
 
     public ProductDiscount getProductDiscount() {
@@ -128,5 +120,16 @@ public class Product {
         return getType().equals(product.getType());
     }
 
-
+    @Override
+    public int hashCode() {
+        int result = getId() != null ? getId().hashCode() : 0;
+        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+        result = 31 * result + (getType() != null ? getType().hashCode() : 0);
+        result = 31 * result + getStock();
+        result = 31 * result + (getPrice() != null ? getPrice().hashCode() : 0);
+        result = 31 * result + (getProductDiscount() != null ? getProductDiscount().hashCode() : 0);
+        result = 31 * result + (isDiscounted() ? 1 : 0);
+        result = 31 * result + (getExpirationDate() != null ? getExpirationDate().hashCode() : 0);
+        return result;
+    }
 }
