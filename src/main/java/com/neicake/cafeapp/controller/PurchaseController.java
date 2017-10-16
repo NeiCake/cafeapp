@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.jws.WebParam;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
@@ -59,25 +60,21 @@ public class PurchaseController {
     }
 
     @PostMapping("/newpurchase")
-    public String newPurchase(Purchase purchase){
-        System.out.println(purchase);
-        purchaseService.performPurchase(purchase);
-
-        return "redirect:/purchases";
-    }
-
-    @GetMapping("/json/products")
     @ResponseBody
-    public List<Product> getProducts(){
-        return productSErvice.getAllNonExpiredProductsInStock();
+    public String newPurchase(@RequestBody String purchaseString){
+	    System.out.println("received string -----"+purchaseString);
+
+    	Purchase purchase=purchaseService.buildPurchaseFromString(purchaseString);
+        if(purchaseService.performPurchase(purchase)){
+        	return "NO";
+        }
+
+	    return "YES";
     }
 
 
-    @GetMapping("/json/customers")
-    @ResponseBody
-    public List<Customer> getCustomers(){
-        return customerService.getAllActiveCustomers();
-    }
+
+
 }
 
 

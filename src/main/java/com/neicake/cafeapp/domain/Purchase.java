@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 public class Purchase {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
 

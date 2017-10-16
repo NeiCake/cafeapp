@@ -6,12 +6,8 @@
     <title>New Product</title>
     <link rel="stylesheet" type="text/css"
           th:href="@{/css/bootstrap.min.css}"/>
-    <script th:src="@{/js/jqxcore.js}"></script>
-    <script th:src="@{/js/jqxdropdownlist.js}"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
-    <script th:src="@{/js/jqxbuttons.js}"></script>
-    <script th:src="@{/js/jqxscrollbar.js}"></script><script th:src="@{/js/jqxlistbox.js}"></script>
 
 
 
@@ -36,44 +32,7 @@
 
     </script>
 
-    <script type="text/javascript">
 
-   $(document).ready(function () {
-                var source =[
-{
-"id": "5",
-"name": "32",
-"type": "COFFEE",
-"stock": "16",
-"price": "4",
-"productDiscount": {
-"id": "3",
-"active": "true",
-"percentOffValue": "22",
-"name": "ssss"
-},
-"discounted": "false",
-"expirationDate": "2017-10-27"
-},
-{
-"id": "6",
-"name": "44",
-"type": "COFFEE",
-"stock": "1",
-"price": "2",
-"productDiscount": "null",
-"discounted": "false",
-"expirationDate": null
-}
-];
-
-                // Create a jqxDropDownList
-                $("#jqxDropDownList").jqxDropDownList({ source: source, selectedIndex: 0, width: '200px', height: '25px', theme: 'summer' });
-            });
-
-
-
-    </script>
 </head>
 <style>
 select.form-control {
@@ -95,72 +54,69 @@ select.form-control {
         </div>
     </th:block>
 
-    <form action="#" th:action="@{/products}" th:object="${product}"
-          enctype="multipart/form-data" method="post">
-<button id="jqxButton">test</button>
         <div class="row">
             <div class="col-md-6">
 
 
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-md-8">
-                        <label>Product name: </label> <select>
-                        <option id="test" value="test"></option>
+                        <label>Product name: </label> <select id="products"><option value="0">
+                    </option>
                     </select>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 10px;">
-                    <div class="col-md-8">
-                        <label>Amount: </label> <input type="text" required="required"
-                                                       class="form-control input-md"/>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 10px;">
-                    <div class="col-md-8">
-                        <label>Customer discount: </label> <select>
-                        <option value="test">
-                        </option>
-                    </select>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 10px;">
-                    <div class="col-md-8">
-                        <label>Customer: </label><select>
-                        <option value="test">
-                        </option>
-                    </select></div>
-                </div>
-                <div class="row" style="margin-top: 10px;">
-                    <div class="col-md-8">
-                        <label>Date: </label>
-
-                        <input type="text"
-                               class="form-control input-md datepicker"/>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-md-8">
                         <label>Product discount: </label>
-                        <select>
-                            <option value="test">
-                            </option>
+                        <select id="discount"><option value="0">
+                        </option>
                         </select>
 
                     </div>
                 </div>
 
 
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-8">
+                        <label>Customer: </label><select id="customers"><option value="0">
+                    </option>
+                    </select></div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-8">
+                        <label>Customer discount: </label> <select id="coupons">
+                        <option value="0">
+                        </option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-8">
+                        <label>Date: </label>
+
+                        <input type="text" id="date"
+                               class="form-control input-md datepicker"/>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-8">
+                        <label>Amount: </label> <input type="text" required="required" id="amount"
+                                                       class="form-control input-md"/>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="row" style="margin-top: 10px;">
             <div class="col-md-2">
-                <label></label> <input type="submit"
-                                       class="btn btn-md btn-success btn-block" name="action"
+                <label></label> <input type="button"
+                                       class="btn btn-md btn-success btn-block" id="purchaseButton"
                                        value="Save"/>
             </div>
 
         </div>
-    </form>
+
 </div>
 </body>
 </html>

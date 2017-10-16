@@ -113,4 +113,16 @@ public class ProductController {
         productDiscountService.delete(discount);
         return "redirect:/products";
     }
+
+    @GetMapping("json/products/{id}/discount")
+	@ResponseBody
+	public ProductDiscount getDiscount(@PathVariable Long id){
+    	return productService.findOneById(id).getProductDiscount();
+    }
+
+	@GetMapping("/json/products")
+	@ResponseBody
+	public List<Product> getProducts(){
+		return productService.getAllNonExpiredProductsInStock();
+	}
 }
