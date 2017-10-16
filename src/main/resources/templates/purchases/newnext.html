@@ -5,15 +5,21 @@
 <head>
     <title>New Product</title>
     <link rel="stylesheet" type="text/css"
-          th:href="@{/css/bootstrap.min.css}" />
+          th:href="@{/css/bootstrap.min.css}"/>
+    <script th:src="@{/js/jqxcore.js}"></script>
+    <script th:src="@{/js/jqxdropdownlist.js}"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+    <script th:src="@{/js/jqxbuttons.js}"></script>
+    <script th:src="@{/js/jqxscrollbar.js}"></script><script th:src="@{/js/jqxlistbox.js}"></script>
+
+
+
     <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script th:src="@{/js/dropdown.js}"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-      -->
-
     <script th:src="@{/js/bootstrap.min.js}"></script>
     <script th:src="@{/js/app.js}"></script>
     <script th:src="@{/js/jquery-ui.js}"></script>
@@ -26,92 +32,122 @@
 	});
 
 
-</script>
+
+
+    </script>
+
+    <script type="text/javascript">
+
+   $(document).ready(function () {
+                var source =[
+{
+"id": "5",
+"name": "32",
+"type": "COFFEE",
+"stock": "16",
+"price": "4",
+"productDiscount": {
+"id": "3",
+"active": "true",
+"percentOffValue": "22",
+"name": "ssss"
+},
+"discounted": "false",
+"expirationDate": "2017-10-27"
+},
+{
+"id": "6",
+"name": "44",
+"type": "COFFEE",
+"stock": "1",
+"price": "2",
+"productDiscount": "null",
+"discounted": "false",
+"expirationDate": null
+}
+];
+
+                // Create a jqxDropDownList
+                $("#jqxDropDownList").jqxDropDownList({ source: source, selectedIndex: 0, width: '200px', height: '25px', theme: 'summer' });
+            });
+
+
+
+    </script>
 </head>
 <style>
 select.form-control {
 	-webkit-appearance: menulist;
 }
+
+
 </style>
 <body>
 <div id="content" layout:fragment="content">
 
-
-
+    <div id='jqxDropDownList'>
+    </div>
     <th:block th:if="${message != null}">
         <!-- /* The message code is returned from the @Controller */ -->
         <div
-                th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=${message.message})">&nbsp;</div>
+                th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=${message.message})">
+            &nbsp;
+        </div>
     </th:block>
 
     <form action="#" th:action="@{/products}" th:object="${product}"
           enctype="multipart/form-data" method="post">
-
+<button id="jqxButton">test</button>
         <div class="row">
             <div class="col-md-6">
-                <div class="row" style="margin-top: 10px; display: none">
-                    <div class="col-md-8">
-                        <label>Id</label> <input type="text" th:field="*{id}"
-                                                 class="form-control input-md" disabled="disabled" />
-                    </div>
-                </div>
+
 
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-md-8">
-                        <label>Name: </label> <input type="text" required="required"
-                                                     th:field="*{name}" class="form-control input-md" />
+                        <label>Product name: </label> <select>
+                        <option id="test" value="test"></option>
+                    </select>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-md-8">
-                        <label>Stock: </label> <input type="text" required="required"
-                                                      th:field="*{stock}" class="form-control input-md" />
+                        <label>Amount: </label> <input type="text" required="required"
+                                                       class="form-control input-md"/>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-md-8">
-                        <label>Price: </label> <input type="text" required="required"
-                                                      th:field="*{price}" class="form-control input-md" />
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 10px;">
-                    <div class="col-md-8">
-                        <label>Price: </label><select  th:field="*{type}">
-                        <option th:each="type : ${T(com.neicake.cafeapp.domain.ProductType).values()}"
-                                th:value="${type}"
-                                th:text="${type}">
+                        <label>Customer discount: </label> <select>
+                        <option value="test">
                         </option>
-                    </select></div></div>
-                <div class="row" style="margin-top: 10px;">
-                    <div class="col-md-8">
-                        <label>Expiration date: </label>
-
-                        <input type="text" th:field="*{expirationDate}"
-                               class="form-control input-md datepicker" />
+                    </select>
                     </div>
                 </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-8">
+                        <label>Customer: </label><select>
+                        <option value="test">
+                        </option>
+                    </select></div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-8">
+                        <label>Date: </label>
 
+                        <input type="text"
+                               class="form-control input-md datepicker"/>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-8">
+                        <label>Product discount: </label>
+                        <select>
+                            <option value="test">
+                            </option>
+                        </select>
 
-
-
-
-
-                <!--<div class="row" style="margin-top: 10px;">-->
-                <!--<div class="col-md-8">-->
-                <!--<div id="reason" class="test"-->
-                <!--th:classappend="${#strings.containsIgnoreCase(candidate.candidateStatus,'Rejected')? '':'hidden'}">-->
-                <!--<label>Rejection Reason: </label> <select class="form-control"-->
-                <!--th:field="*{rejectionReason}" id="dropRejectionReason">-->
-                <!--<option value="">Select Rejection Reason</option>-->
-                <!--<option th:each="rejectionReason : ${selectRejectionReason}"-->
-                <!--th:value="${rejectionReason.value}"-->
-                <!--th:text="${rejectionReason.value}"></option>-->
-                <!--</select>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-
-
+                    </div>
+                </div>
 
 
             </div>
@@ -120,7 +156,7 @@ select.form-control {
             <div class="col-md-2">
                 <label></label> <input type="submit"
                                        class="btn btn-md btn-success btn-block" name="action"
-                                       value="Save" />
+                                       value="Save"/>
             </div>
 
         </div>

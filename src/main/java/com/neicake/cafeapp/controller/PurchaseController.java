@@ -48,17 +48,13 @@ public class PurchaseController {
     public String newPurchase(Model model, RedirectAttributes redirectAttributes){
 
         Purchase purchase=new Purchase();
-        Customer c=new Customer();
-        Product p=new Product();
-        purchase.setCustomer(c);
-        purchase.setProduct(p);
         model.addAttribute("purchase",purchase);
-        List<Customer> customerList=customerService.getAllCustomers();
+        List<Customer> customerList=customerService.getAllActiveCustomers();
         model.addAttribute("customers",customerList);
         List<Product> productList=productSErvice.getAllNonExpiredProductsInStock();
         model.addAttribute("products", productList);
 
-        return "purchases/new";
+        return "purchases/newnext";
 
     }
 
@@ -69,4 +65,19 @@ public class PurchaseController {
 
         return "redirect:/purchases";
     }
+
+    @GetMapping("/json/products")
+    @ResponseBody
+    public List<Product> getProducts(){
+        return productSErvice.getAllNonExpiredProductsInStock();
+    }
+
+
+    @GetMapping("/json/customers")
+    @ResponseBody
+    public List<Customer> getCustomers(){
+        return customerService.getAllActiveCustomers();
+    }
 }
+
+

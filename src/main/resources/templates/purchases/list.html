@@ -57,6 +57,7 @@
 						<th class='tablefilter2'>Product Type</th>
 						<th class='tablefilter3'>Amount</th>
 						<th class='tablefilter4'>Product Name</th>
+						<th>Date</th>
 						<th class='tablefilter5'>Coupon applied percentage</th>
 						<th class='tablefilter7'>Discount applied percentage</th>
 
@@ -68,20 +69,15 @@
 					<tr th:if="${purchases !=null}"
 						th:each="purchase : ${purchases}">
 
-						<td th:switch="${product.discounted}">
-							<div th:case="true" th:text="${product.productDiscount.percentOffValue}">
 
-							</div>
-							<div th:case="false" th:text="NONE"></div>
-
-						</td>
 						<td th:text="${purchase.id}"></td>
-						<td th:text="${purchase.customer.name}"></td>
-						<th th:text="${purchase.product.productType}"></th>
+						<td th:text="${purchase.customer != null} ? ${purchase.customer.name} : 'ANONYMOUS'"></td>
+						<th th:text="${purchase.product.type}"></th>
 						<td th:text="${purchase.amount}"></td>
 						<td th:text="${purchase.product.name}"></td>
-						<td th:text="${purchase.coupon.percentOffValue}"></td>
-						<td th:text="${purchase.productDiscount.percentOffValue}"></td>
+						<td th:text="${purchase.date}"></td>
+						<td th:text="${purchase.coupon != null} ? ${purchase.coupon.percentOffValue} : 'NONE'"></td>
+						<td th:text="${purchase.productDiscount != null} ? ${purchase.productDiscount.percentOffValue} : 'NONE'"></td>
 						<td th:text="${purchase.totalPaidWithDiscount}"></td>
 					</tr>
 				</tbody>

@@ -16,11 +16,12 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
 
+
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-        configurer.ignoreAcceptHeader(true).defaultContentType(
-                MediaType.TEXT_HTML);
+        configurer.ignoreAcceptHeader(true).defaultContentType(MediaType.APPLICATION_JSON);
     }
+
 
 
 

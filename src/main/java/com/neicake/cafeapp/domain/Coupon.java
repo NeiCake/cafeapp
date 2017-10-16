@@ -1,5 +1,7 @@
 package com.neicake.cafeapp.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +14,7 @@ public class Coupon extends Discount{
 
     @JoinColumn
     @ManyToOne
+    @JsonIgnore
     private Customer customer;
 
     public ProductType getProductType() {

@@ -7,7 +7,42 @@ $(document).ready(function() {
 	// buildAndExecFilter();
 	// dropdownFilter();
 	saveFilter();
+
+	                var source =[
+    {
+    "id": "5",
+    "name": "32",
+    "type": "COFFEE",
+    "stock": "16",
+    "price": "4",
+    "productDiscount": {
+    "id": "3",
+    "active": "true",
+    "percentOffValue": "22",
+    "name": "ssss"
+    },
+    "discounted": "false",
+    "expirationDate": "2017-10-27"
+    },
+    {
+    "id": "6",
+    "name": "44",
+    "type": "COFFEE",
+    "stock": "1",
+    "price": "2",
+    "productDiscount": "null",
+    "discounted": "false",
+    "expirationDate": null
+    }
+    ];
+
+                    // Create a jqxDropDownList
+                    $("#jqxDropDownList").jqxDropDownList({ source: source, selectedIndex: 0, width: '200px', height: '25px', theme: 'summer' });
 });
+
+
+
+
 
 $(document).keypress(
 		function(e) {

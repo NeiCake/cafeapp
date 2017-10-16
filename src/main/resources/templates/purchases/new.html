@@ -58,8 +58,7 @@ select.form-control {
 
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-md-8">
-                        <label>Product: </label><select th:field="*{product.id}">
-                        <option value="">Select Product</option>
+                        <label>Product: </label><select th:field="*{product}"  required="required">
                         <option th:each="product : ${products}"
                                 th:value="${product.id}"
                                 th:text="${product.name}">
@@ -69,8 +68,8 @@ select.form-control {
 
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-md-8">
-                        <label>Customer: </label><select th:field="*{customer.id}">
-                        <option value="">Select Customer</option>
+                        <label>Customer(optional): </label><select th:field="*{customer.id}" >
+
                         <option th:each="customer : ${customers}"
                                 th:value="${customer.id}"
                                 th:text="${customer}">
@@ -78,6 +77,14 @@ select.form-control {
                     </select></div>
                 </div>
 
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-8">
+                        <label>Date: </label>
+
+                        <input type="text" th:field="*{date}"
+                               class="form-control input-md datepicker"  required="required"/>
+                    </div>
+                </div>
 
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-md-8">
@@ -100,14 +107,7 @@ select.form-control {
                         <!--</option>-->
                     <!--</select></div>-->
                 <!--</div>-->
-                <!--<div class="row" style="margin-top: 10px;">-->
-                    <!--<div class="col-md-8">-->
-                        <!--<label>Expiration date: </label>-->
 
-                        <!--<input type="text" th:field="*{expirationDate}"-->
-                               <!--class="form-control input-md datepicker"/>-->
-                    <!--</div>-->
-                <!--</div>-->
 
 
             </div>
