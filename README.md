@@ -1,5 +1,7 @@
 # cafeapp
 
+Adding purchases provides no feedback since I am very bad at front end. If it fails, you'll see an error 500 being thrown (check dev console, F12 in chrome) and if you don't get that, the transaction probably went though properly. Check db.
+
 There is very little protection against bad data (you can add negative amount of purchase to add to product stock, for example) and some other "why would anyone ever do this" things that I've had no time to deal with
 Also, discounts are put on the purchase but I'm not actually "applying them", yes (just a tiny bit of math to add there but it requires some safety like percentages within limits and stuff)
 
