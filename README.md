@@ -1,5 +1,5 @@
 # cafeapp
-
+LATEST VERSION HAS IN-MEMORY DB ;)
 If you are reviewing this, please pull/download the latest version. Thanks!
 
 
