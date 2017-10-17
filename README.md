@@ -1,5 +1,7 @@
 # cafeapp
 
+If you are reviewing this, please pull/download the latest version. Thanks!
+
 
 Adding purchases provides no feedback since I am very bad at front end. If it fails, you'll see an error 500 being thrown (check dev console, F12 in chrome) and if you don't get that, the transaction probably went though properly. Check db.
 
