@@ -76,7 +76,7 @@
 				</div>
 				<div class="row" style="margin-top: 10px;">
 					<div class="col-md-8">
-						<label>Price: </label><select  th:field="*{type}">
+						<label>Product type: </label><select  th:field="*{type}">
 						<option th:each="type : ${T(com.neicake.cafeapp.domain.ProductType).values()}"
 								th:value="${type}"
 								th:text="${type}">
