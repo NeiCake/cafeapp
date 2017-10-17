@@ -9,8 +9,8 @@ import java.util.List;
 
 @Service
 public interface IPurchaseService {
-    boolean validatePurchase(Purchase purchase);
-    boolean performPurchase(Purchase purchase);
+    boolean validatePurchaseAmount(Purchase purchase);
+    void performPurchase(Purchase purchase);
     List<Purchase> listAllPurchases();
     List<Purchase> listAllPurchasesForPeriod(Date minDate, Date maxDate);
     List<Purchase> listAllPurchasesForLastDays(int days);

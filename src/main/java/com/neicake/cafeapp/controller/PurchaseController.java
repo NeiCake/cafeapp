@@ -65,11 +65,9 @@ public class PurchaseController {
 	    System.out.println("received string -----"+purchaseString);
 
     	Purchase purchase=purchaseService.buildPurchaseFromString(purchaseString);
-        if(purchaseService.performPurchase(purchase)){
-        	return "NO";
-        }
+        purchaseService.performPurchase(purchase);
 
-	    return "YES";
+	    return "";
     }
 
 

@@ -2,9 +2,11 @@ package com.neicake.cafeapp.util;
 
 public class InvalidPurchaseException extends RuntimeException {
 
-	String message;
+	PurchaseError error;
 
-	public InvalidPurchaseException(String message) {
-		this.message = message;
+	public InvalidPurchaseException(PurchaseError purchaseError) {
+		super(purchaseError.toString());
+		error=purchaseError;
 	}
+
 }
