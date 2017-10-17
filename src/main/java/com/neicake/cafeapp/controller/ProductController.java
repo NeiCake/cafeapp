@@ -90,10 +90,11 @@ public class ProductController {
         return modelAndView;
     }
 
-    @PostMapping("/products/{id}/")
-    public String saveCoupon(@ModelAttribute ProductDiscount productDiscount, Model model, @PathVariable Long id, RedirectAttributes redirectAttributes) {
-        Product toSave = productService.findOneById(id);
+    @PostMapping("/products/{prodid}/")
+    public String saveProductDiscount(@ModelAttribute ProductDiscount productDiscount, Model model, @PathVariable Long prodid, RedirectAttributes redirectAttributes) {
+        Product toSave = productService.findOneById(prodid);
         productDiscount.setProduct(toSave);
+        System.out.println("the productDiscount you are trying to save has the ID = "+productDiscount.getId());
         productDiscountService.saveProductDiscount(productDiscount);
         return "redirect:/products/";
     }

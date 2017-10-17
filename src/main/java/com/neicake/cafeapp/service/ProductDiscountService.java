@@ -1,6 +1,8 @@
 package com.neicake.cafeapp.service;
 
 import com.neicake.cafeapp.dao.ProductDiscountRepository;
+import com.neicake.cafeapp.dao.ProductRepository;
+import com.neicake.cafeapp.domain.Product;
 import com.neicake.cafeapp.domain.ProductDiscount;
 import com.neicake.cafeapp.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,8 @@ public class ProductDiscountService implements IProductDiscountService {
 
     @Autowired
     private ProductDiscountRepository productDiscountDao;
+    @Autowired
+    private ProductRepository productDao;
 
     @Override
     public ProductDiscount findOneById(Long id) {
@@ -26,6 +30,8 @@ public class ProductDiscountService implements IProductDiscountService {
     @Override
     public void delete(ProductDiscount discount) {
         discount.setActive(false);
+        discount.setProduct(null);
         productDiscountDao.save(discount);
+
     }
 }
