@@ -1,6 +1,5 @@
 # cafeapp
 
-DO NOT REVIEW YET, PLEASE. It appears the latest push did not go through despite intellij telling me it did. That's what I get for not using a proper git client, I guess. Will try to push tomorrow once I gain access to my laptop again.
 
 Adding purchases provides no feedback since I am very bad at front end. If it fails, you'll see an error 500 being thrown (check dev console, F12 in chrome) and if you don't get that, the transaction probably went though properly. Check db.
 
