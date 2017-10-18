@@ -13,7 +13,6 @@ public interface ICustomerService {
     List<Customer> getAllCustomers();
     Customer findOneById(Long id);
 
-    void delete(Coupon coupon);
     void deleteCustomer(Long id);
 
     List<Customer> getAllActiveCustomers();

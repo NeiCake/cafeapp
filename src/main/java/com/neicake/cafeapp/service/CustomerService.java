@@ -17,6 +17,9 @@ public class CustomerService implements ICustomerService {
     CustomerRepository customerDao;
 
     @Autowired
+    private ICouponService couponService;
+
+    @Autowired
     private CouponRepository couponDao;
     @Override
     public Response save(Customer customer) {
@@ -39,15 +42,11 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public void delete(Coupon coupon) {
-        couponDao.delete(coupon);
-    }
-
-    @Override
     public void deleteCustomer(Long id) {
 
         Customer c=customerDao.findOne(id);
 
+        couponService.deleteAllCouponsForCustomer(c);
         c.setActive(false);
         customerDao.save(c);
     }

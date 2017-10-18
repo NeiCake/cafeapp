@@ -50,6 +50,7 @@ public class CouponService implements ICouponService {
     @Override
     public void deleteAllCouponsForCustomer(Customer customer) {
         List<Coupon> coupons=couponDao.findAllByCustomer(customer);
+        System.out.println("found coupons for customer "+coupons);
         for(Coupon c:coupons){
             delete(c);
         }
