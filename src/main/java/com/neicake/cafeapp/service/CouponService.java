@@ -2,6 +2,7 @@ package com.neicake.cafeapp.service;
 
 import com.neicake.cafeapp.dao.CouponRepository;
 import com.neicake.cafeapp.domain.Coupon;
+import com.neicake.cafeapp.domain.Customer;
 import com.neicake.cafeapp.domain.Discount;
 import com.neicake.cafeapp.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,18 @@ public class CouponService implements ICouponService {
         Coupon coupon=couponDao.findOne(id);
         coupon.setActive(false);
         couponDao.save(coupon);
+    }
+
+    @Override
+    public List<Coupon> findAllByCustomer(Customer customer) {
+        return couponDao.findAllByCustomer(customer);
+    }
+
+    @Override
+    public void deleteAllCouponsForCustomer(Customer customer) {
+        List<Coupon> coupons=couponDao.findAllByCustomer(customer);
+        for(Coupon c:coupons){
+            delete(c);
+        }
     }
 }

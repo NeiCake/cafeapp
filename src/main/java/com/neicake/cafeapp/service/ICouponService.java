@@ -1,6 +1,7 @@
 package com.neicake.cafeapp.service;
 
 import com.neicake.cafeapp.domain.Coupon;
+import com.neicake.cafeapp.domain.Customer;
 import com.neicake.cafeapp.domain.Discount;
 import com.neicake.cafeapp.util.Response;
 import org.springframework.stereotype.Service;
@@ -17,4 +18,8 @@ public interface ICouponService{
     void delete(Coupon coupon);
 
     void deleteCoupon(Long id);
+
+    List<Coupon> findAllByCustomer(Customer customer);
+
+    void deleteAllCouponsForCustomer(Customer customer);
 }

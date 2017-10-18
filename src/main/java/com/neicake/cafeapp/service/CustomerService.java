@@ -47,6 +47,7 @@ public class CustomerService implements ICustomerService {
     public void deleteCustomer(Long id) {
 
         Customer c=customerDao.findOne(id);
+
         c.setActive(false);
         customerDao.save(c);
     }
