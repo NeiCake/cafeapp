@@ -1,5 +1,5 @@
 # cafeapp
-
+LATEST VERSION HAS IN-MEMORY DB ;)
 If you are reviewing this, please pull/download the latest version. Thanks!
 
 
@@ -11,5 +11,6 @@ Also, discounts are put on the purchase but I'm not actually "applying them", ye
 Tomcat container is embedded and will need port 8080 to run.  Access it by localhost:8080 
 
 Can be run by running App.java or building a jar using maven after you've imported the project to your IDE
+
+if you wanna use mysql/other--->
 application.properies to set your database stuff (user/pass/db)
-Don't forget to create the schema in your db to match "cafe" or whatever else you wanna call it in the properties file
